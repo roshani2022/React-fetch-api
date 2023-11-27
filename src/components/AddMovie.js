@@ -18,7 +18,9 @@ const AddMovie = (props) => {
       releaseDate:releaseDateRef.current.value
     }
 
-    console.log(movie)
+    props.onAddMovie(movie)
+
+   
 
     titleRef.current.value=""
     openingTextRef.current.value=""
