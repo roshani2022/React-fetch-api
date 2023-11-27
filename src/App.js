@@ -19,7 +19,7 @@ function App() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch("https://swapi.dev/api/film/");
+      const response = await fetch("https://swapi.dev/api/films/");
 
       if (!response.ok) {
         throw new Error("Something went wrong ....Retrying");
@@ -43,6 +43,10 @@ function App() {
     }
     setIsLoading(false);
   }, []);
+
+  useEffect(()=>{
+    fetchMovieHandler();
+  },[fetchMovieHandler])
 
   const cancelRetringHadlker = () => {
     clearTimeout(retryTimeout);
